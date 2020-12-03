@@ -8,4 +8,7 @@ An attempt at solving http://adventofcode.com/2020[Advent of Code 2020] using ht
 |https://adventofcode.com/2020/day/1[Day 1: Report Repair]
 |https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day01/Day01Part1.go[Part 1]
  https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day01/Day01Part2.go[Part 2]
+|https://adventofcode.com/2020/day/2[Day 2: Password Philosophy]
+|https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day02/Day02Part1.go[Part 1]
+ https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day02/Day02Part2.go[Part 2]
 |===

@@ -93,3 +93,24 @@ func ParsePassword(line string) Password {
 		Text: result["text"],
 	}
 }
+
+type Point struct{ X, Y int }
+
+func (p1 Point) Add(p2 Point) Point {
+	return Point{p1.X + p2.X, p1.Y + p2.Y}
+}
+
+var Origin = Point{0, 0}
+
+type Grid struct {
+	Geology []string
+}
+
+func (g Grid) IsTree(p Point) bool {
+	i := p.X % len(g.Geology[0])
+	return g.Geology[p.Y][i:i+1] == "#"
+}
+
+func (g Grid) Contains(p Point) bool {
+	return p.Y >= 0 && p.Y < len(g.Geology)
+}

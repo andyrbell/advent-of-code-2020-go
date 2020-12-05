@@ -114,3 +114,83 @@ func (g Grid) IsTree(p Point) bool {
 func (g Grid) Contains(p Point) bool {
 	return p.Y >= 0 && p.Y < len(g.Geology)
 }
+
+type Passport struct {
+	PassportData map[string]string
+}
+
+var requiredPassportFields = []string{"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
+
+func (p Passport) HasRequiredFields() bool {
+	for _, field := range requiredPassportFields {
+		if p.PassportData[field] == "" {
+			return false
+		}
+	}
+	return true
+}
+
+func (p Passport) ValidBirthYear() bool {
+	return validYear(p.PassportData["byr"], 1920, 2002)
+}
+
+func (p Passport) validIssueYear() bool {
+	return validYear(p.PassportData["iyr"], 2010, 2020)
+}
+
+func (p Passport) validExpirationYear() bool {
+	return validYear(p.PassportData["eyr"], 2020, 2030)
+}
+
+func validYear(year string, min int, max int) bool {
+	y, err := strconv.Atoi(year)
+	if err != nil {
+		return false
+	}
+	return y >= min && y <= max
+}
+
+func (p Passport) ValidHeight() bool {
+	var heightRegex = regexp.MustCompile(`(?P<value>\d+)(?P<units>[a-z]+)`)
+	result := FindNamedMatches(heightRegex, p.PassportData["hgt"])
+	value, err := strconv.Atoi(result["value"])
+	if err != nil {
+		return false
+	}
+	return (result["units"] == "cm" && value >= 150 && value <= 193) || (result["units"] == "in" && value >= 59 && value <= 76)
+}
+
+func (p Passport) ValidHairColour() bool {
+	match, _ := regexp.MatchString("#[a-f0-9]{6}", p.PassportData["hcl"])
+	return match
+}
+
+var validEyeColours = map[string]bool{
+	"amb": true,
+	"blu": true,
+	"brn": true,
+	"gry": true,
+	"grn": true,
+	"hzl": true,
+	"oth": true,
+}
+
+func (p Passport) ValidEyeColour() bool {
+	return validEyeColours[p.PassportData["ecl"]]
+}
+
+func (p Passport) ValidPassportId() bool {
+	match, _ := regexp.MatchString("^[0-9]{9}$", p.PassportData["pid"])
+	return match
+}
+
+func (p Passport) HasValidData() bool {
+	return p.HasRequiredFields() &&
+		p.ValidBirthYear() &&
+		p.validIssueYear() &&
+		p.validExpirationYear() &&
+		p.ValidHeight() &&
+		p.ValidHairColour() &&
+		p.ValidEyeColour() &&
+		p.ValidPassportId()
+}

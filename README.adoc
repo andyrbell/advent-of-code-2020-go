@@ -22,4 +22,6 @@ An attempt at solving http://adventofcode.com/2020[Advent of Code 2020] using ht
 |https://adventofcode.com/2020/day/6[Day 6: Custom Customs]
 |https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day06/Day06Part1.go[Part 1]
  https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day06/Day06Part2.go[Part 2]
+|https://adventofcode.com/2020/day/7[Day 7: Handy Haversacks]
+|https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day07/Day07.go[Part 1 & 2]
 |===

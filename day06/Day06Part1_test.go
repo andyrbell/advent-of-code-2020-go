@@ -1,4 +1,4 @@
-package day05
+package day06
 
 import (
 	"advent-of-code-2020-go/utils"

@@ -1,4 +1,4 @@
-package day05
+package day06
 
 func solvePart1(input []string) int {
 	answers := make(map[string]bool)

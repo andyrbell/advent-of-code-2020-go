@@ -26,5 +26,8 @@ An attempt at solving http://adventofcode.com/2020[Advent of Code 2020] using ht
 |https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day07/Day07.go[Part 1 & 2]
 |https://adventofcode.com/2020/day/8[Day 8: Handheld Halting]
 |https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day08/Day08Part1.go[Part 1]
-https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day08/Day08Part2.go[Part 2]
+ https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day08/Day08Part2.go[Part 2]
+|https://adventofcode.com/2020/day/9[Day 9: Encoding Error]
+|https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day09/Day09Part1.go[Part 1]
+ https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day09/Day09Part2.go[Part 2]
 |===

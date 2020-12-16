@@ -15,6 +15,49 @@ func Contains(array []int, item int) bool {
 	return i < len(array) && array[i] == item
 }
 
+type PairInt64 struct {
+	X int64
+	Y int64
+}
+
+func (p PairInt64) Sum() int64 {
+	return p.X + p.Y
+}
+
+func Combinations(array []int64) []PairInt64 {
+	var result []PairInt64
+	for i, x := range array {
+		for j, y := range array {
+			if i != j {
+				result = append(result, PairInt64{X: x, Y: y})
+			}
+		}
+	}
+	return result
+}
+
+func Sum(array []int64) int64 {
+	var result int64 = 0
+	for _, value := range array {
+		result += value
+	}
+	return result
+}
+
+func MinAndMax(array []int64) PairInt64 {
+	min := array[0]
+	max := array[0]
+	for _, item := range array {
+		if item < min {
+			min = item
+		}
+		if item > max {
+			max = item
+		}
+	}
+	return PairInt64{min, max}
+}
+
 func ReadInts(filepath string) []int {
 	file, err := os.Open(filepath)
 	HandleError(err)
@@ -24,6 +67,21 @@ func ReadInts(filepath string) []int {
 	var input []int
 	for scanner.Scan() {
 		i, err := strconv.Atoi(scanner.Text())
+		HandleError(err)
+		input = append(input, i)
+	}
+	return input
+}
+
+func ReadInt64s(filepath string) []int64 {
+	file, err := os.Open(filepath)
+	HandleError(err)
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	var input []int64
+	for scanner.Scan() {
+		i, err := strconv.ParseInt(scanner.Text(), 10, 64)
 		HandleError(err)
 		input = append(input, i)
 	}

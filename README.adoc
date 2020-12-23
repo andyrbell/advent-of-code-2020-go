@@ -30,4 +30,7 @@ An attempt at solving http://adventofcode.com/2020[Advent of Code 2020] using ht
 |https://adventofcode.com/2020/day/9[Day 9: Encoding Error]
 |https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day09/Day09Part1.go[Part 1]
  https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day09/Day09Part2.go[Part 2]
+|https://adventofcode.com/2020/day/10[Day 10: Adapter Array]
+|https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day10/Day10Part1.go[Part 1]
+ https://github.com/andyrbell/advent-of-code-2020-go/blob/main/day10/Day10Part2.go[Part 2]
 |===
